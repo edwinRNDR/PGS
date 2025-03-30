@@ -301,7 +301,7 @@ public final class PGS_Contour {
 			skeleton.skeleton(); // compute skeleton
 
 			skeleton.output.faces.values().forEach(f -> {
-				final List<Point3d> vertices = f.getLoopL().iterator().next().asList();
+				final List<Point3d> vertices = f.getLoopL().iterator().next().stream().toList();
 				List<PVector> faceVertices = new ArrayList<>();
 
 				for (int i = 0; i < vertices.size(); i++) {
